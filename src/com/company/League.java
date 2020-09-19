@@ -1,6 +1,8 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 public class League <T extends Team> {
     private String name;
@@ -17,6 +19,18 @@ public class League <T extends Team> {
         }else{
             this.league.add(team);
             return true;
+        }
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void showLeagueTable(){
+        Collections.sort(league);
+        System.out.println("----- "+this.getName()+" ------");
+        for(T t:league){
+            System.out.println(t.getName()+": "+t.ranking());
         }
     }
 }
