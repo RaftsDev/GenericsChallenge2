@@ -25,6 +25,7 @@ public class Main {
         BaseballPlayer pat = new BaseballPlayer("Pat");
         SoccerPlayer beckham = new SoccerPlayer("Beckham");
 
+        //   Raw types ****************************************
         Team rawTeam = new Team("Raw Team");
         rawTeam.addPlayer(beckham); // unchecked warning
         rawTeam.addPlayer(pat);     // unchecked warning
