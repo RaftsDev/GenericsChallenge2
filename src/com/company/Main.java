@@ -25,6 +25,23 @@ public class Main {
         BaseballPlayer pat = new BaseballPlayer("Pat");
         SoccerPlayer beckham = new SoccerPlayer("Beckham");
 
+        Team rawTeam = new Team("Raw Team");
+        rawTeam.addPlayer(beckham); // unchecked warning
+        rawTeam.addPlayer(pat);     // unchecked warning
+
+        footballLeague.add(rawTeam);     // unchecked warning
+
+        League<Team> rawLeague = new League<>("Raw");
+        rawLeague.add(adelaideCrows);     // no warning
+        rawLeague.add(baseballTeam);    // no warning
+        rawLeague.add(rawTeam);         // no warning
+
+        League reallyRaw = new League("Really raw");
+        reallyRaw.add(adelaideCrows);     // unchecked warning
+        reallyRaw.add(baseballTeam);    // unchecked warning
+        reallyRaw.add(rawTeam);         // unchecked warning
+
+        reallyRaw.showLeagueTable();
 
 
     }
